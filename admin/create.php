@@ -17,14 +17,19 @@
             <input type="text" name="headline" class="w-full border px-4 py-2">
         </div>
         <div>
-            <label class="block mb-1">Content</label>
-            <textarea name="content" class="w-full border px-4 py-2"></textarea>
+            <label class="block mb-1 text-sm font-medium text-gray-700">Content</label>
+            <textarea name="content" rows="8"
+                class="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 resize-y"></textarea>
         </div>
         <div>
             <label class="block mb-1">Image</label>
             <input type="file" name="image" class="block">
         </div>
         <button type="submit" name="submit" class="bg-green-500 text-white px-4 py-2 rounded">Submit</button>
+        <a href="index.php"
+            class="px-4 py-2 bg-gray-500 text-white rounded-md shadow-sm hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
+            Back home
+        </a>
     </form>
     <?php
     if (isset($_POST['submit'])) {

@@ -12,7 +12,6 @@ include 'auth.php';?>
 </head>
 
 <body class="bg-gray-100 font-sans leading-normal tracking-normal">
-    <!-- Header -->
     <header class="bg-indigo-600">
         <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
             <div class="flex h-16 items-center justify-between">
@@ -20,24 +19,6 @@ include 'auth.php';?>
                     <a class="block text-white font-bold" href="/">
                         <h1>SEPUTAR VOKASI</h1>
                     </a>
-                </div>
-
-                <div class="hidden md:block">
-                    <nav aria-label="Global">
-                        <ul class="flex items-center gap-6 text-sm">
-                            <li>
-                                <a class="text-white transition hover:text-gray-500/75" href="#"> About </a>
-                            </li>
-
-                            <li>
-                                <a class="text-white transition hover:text-gray-500/75" href="#"> Careers </a>
-                            </li>
-
-                            <li>
-                                <a class="text-white transition hover:text-gray-500/75" href="#"> Blog </a>
-                            </li>
-                        </ul>
-                    </nav>
                 </div>
 
                 <div class="flex items-center gap-4">
@@ -68,7 +49,6 @@ include 'auth.php';?>
         </div>
     </header>
 
-    <!-- Main Content -->
     <div class="container mx-auto px-4 py-6">
         <div class="flex justify-between items-center mb-6">
             <h2 class="text-2xl font-bold">Manage Blogs</h2>
@@ -77,7 +57,6 @@ include 'auth.php';?>
             </a>
         </div>
 
-        <!-- Table -->
         <div class="bg-white shadow-md rounded-lg overflow-hidden">
             <table class="min-w-full table-auto">
                 <thead class="bg-blue-500 text-white">
@@ -117,8 +96,7 @@ include 'auth.php';?>
         </div>
     </div>
 
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-4 mt-6">
+    <footer class="bg-indigo-500 text-white py-4 mt-6">
         <div class="container mx-auto text-center">
             <p>&copy; <?= date('Y'); ?> Admin Panel - Blog. All Rights Reserved.</p>
         </div>

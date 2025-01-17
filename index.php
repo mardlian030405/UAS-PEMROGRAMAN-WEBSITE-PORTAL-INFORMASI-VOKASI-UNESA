@@ -19,17 +19,15 @@
                     </a>
                 </div>
 
-                <div class="hidden md:block">
+                <div class="hidden md:block" id="nav-menu">
                     <nav aria-label="Global">
                         <ul class="flex items-center gap-6 text-sm">
                             <li>
                                 <a class="text-white transition hover:text-gray-500/75" href="/about.php"> About </a>
                             </li>
-
                             <li>
                                 <a class="text-white transition hover:text-gray-500/75" href="/team.php"> Team </a>
                             </li>
-
                             <li>
                                 <a class="text-white transition hover:text-gray-500/75" href="/blog.php"> Blog </a>
                             </li>
@@ -43,9 +41,8 @@
                             href="admin/index.php">
                             Login
                         </a>
-
                         <div class="hidden sm:flex">
-                            <a class="rounded-md bg-gray-100 px-5 py-2.5 text-sm font-medium text-teal-600"
+                            <a class="rounded-md bg-gray-100 px-5 py-2.5 text-sm font-medium text-indigo-900"
                                 href="admin/register.php">
                                 Register
                             </a>
@@ -53,7 +50,8 @@
                     </div>
 
                     <div class="block md:hidden">
-                        <button class="rounded bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75">
+                        <button id="hamburger-btn"
+                            class="rounded bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75">
                             <svg xmlns="http://www.w3.org/2000/svg" class="size-5" fill="none" viewBox="0 0 24 24"
                                 stroke="currentColor" stroke-width="2">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
@@ -62,6 +60,23 @@
                     </div>
                 </div>
             </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden">
+            <nav aria-label="Global">
+                <ul class="flex flex-col items-start gap-4 p-4 text-sm bg-indigo-900 text-white">
+                    <li>
+                        <a class="transition hover:text-gray-500/75" href="/about.php"> About </a>
+                    </li>
+                    <li>
+                        <a class="transition hover:text-gray-500/75" href="/team.php"> Team </a>
+                    </li>
+                    <li>
+                        <a class="transition hover:text-gray-500/75" href="/blog.php"> Blog </a>
+                    </li>
+                </ul>
+            </nav>
         </div>
     </header>
 
@@ -85,7 +100,7 @@
 
                 <div class="mt-8 flex flex-wrap justify-center gap-4">
                     <a class="block w-full rounded bg-indigo-800 px-12 py-3 text-sm font-medium text-white shadow hover:bg-red-700 focus:outline-none focus:ring active:bg-red-500 sm:w-auto"
-                        href="#">
+                        onclick="showPopup()" href="#blog">
                         Get Started
                     </a>
 
@@ -98,8 +113,7 @@
         </div>
     </section>
 
-
-    <div class="container mx-auto px-4 py-6">
+    <div id="blog" class="container mx-auto px-4 py-6">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             <?php
             $result = $conn->query("SELECT * FROM blogs ORDER BY id DESC");
@@ -118,7 +132,7 @@
         </div>
     </div>
 
-    <footer class="bg-indigo-800">
+    <footer class="bg-indigo-900">
         <div class="mx-auto max-w-screen-xl px-4 pb-8 pt-16 sm:px-6 lg:px-8 lg:pt-24">
             <div class="text-center">
                 <h2 class="text-3xl font-extrabold text-white sm:text-5xl">PORTAL INFORMASI SEPUTAR VOKASI</h2>
@@ -162,7 +176,8 @@
                     </li>
 
                     <li>
-                        <a href="#" rel="noreferrer" target="_blank" class="text-white transition hover:opacity-75">
+                        <a href="https://www.instagram.com/vokasiunesaofficial/#" rel="noreferrer" target="_blank"
+                            class="text-white transition hover:opacity-75">
                             <span class="sr-only">Instagram</span>
 
                             <svg class="size-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -174,7 +189,8 @@
                     </li>
 
                     <li>
-                        <a href="#" rel="noreferrer" target="_blank" class="text-white transition hover:opacity-75">
+                        <a href="https://www.instagram.com/vokasiunesaofficial/#" rel="noreferrer" target="_blank"
+                            class="text-white transition hover:opacity-75">
                             <span class="sr-only">Twitter</span>
 
                             <svg class="size-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -185,7 +201,8 @@
                     </li>
 
                     <li>
-                        <a href="#" rel="noreferrer" target="_blank" class="text-white transition hover:opacity-75">
+                        <a href="https://github.com/mardlian030405/UAS-PEMROGRAMAN-WEBSITE-PORTAL-INFORMASI-VOKASI-UNESA"
+                            rel="noreferrer" target="_blank" class="text-white transition hover:opacity-75">
                             <span class="sr-only">GitHub</span>
 
                             <svg class="size-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -199,6 +216,13 @@
             </div>
         </div>
     </footer>
+
+    <script>
+    document.getElementById('hamburger-btn').addEventListener('click', function() {
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenu.classList.toggle('hidden');
+    });
+    </script>
 </body>
 
 </html>

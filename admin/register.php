@@ -33,30 +33,41 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <title>Register</title>
 </head>
 
-<body class="bg-gray-100">
-    <div class="container mx-auto max-w-md mt-10">
-        <h1 class="text-2xl font-bold text-center mb-6">Register</h1>
+<body class="bg-gradient-to-r from-blue-100 via-purple-100 to-pink-100 min-h-screen flex items-center justify-center">
+    <div class="w-full max-w-md bg-white rounded-lg shadow-lg p-8">
+        <h1 class="text-3xl font-bold text-gray-800 text-center mb-6">Create Account</h1>
         <?php if ($message): ?>
-        <p class="text-red-500 text-center"><?= htmlspecialchars($message); ?></p>
+        <p class="text-red-500 text-center mb-4"><?= htmlspecialchars($message); ?></p>
         <?php endif; ?>
-        <form method="POST" class="bg-white shadow-md rounded-lg p-6">
-            <div class="mb-4">
-                <label class="block text-gray-700">Username</label>
+        <form method="POST" class="space-y-5">
+            <!-- Username -->
+            <div>
+                <label class="block text-sm font-medium text-gray-700">Username</label>
                 <input type="text" name="username" required
-                    class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600">
+                    class="mt-1 w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500">
             </div>
-            <div class="mb-4">
-                <label class="block text-gray-700">Password</label>
+            <!-- Password -->
+            <div>
+                <label class="block text-sm font-medium text-gray-700">Password</label>
                 <input type="password" name="password" required
-                    class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600">
+                    class="mt-1 w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500">
             </div>
-            <div class="mb-4">
-                <label class="block text-gray-700">Confirm Password</label>
+            <!-- Confirm Password -->
+            <div>
+                <label class="block text-sm font-medium text-gray-700">Confirm Password</label>
                 <input type="password" name="confirm_password" required
-                    class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600">
+                    class="mt-1 w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500">
             </div>
-            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white px-4 py-2 rounded">Register</button>
+            <!-- Submit Button -->
+            <button type="submit"
+                class="w-full bg-gradient-to-r from-indigo-500 to-purple-500 text-white text-lg font-semibold py-2 rounded-lg shadow-md hover:from-indigo-600 hover:to-purple-600 focus:ring-2 focus:ring-indigo-400 focus:ring-offset-2">
+                Register
+            </button>
         </form>
+        <!-- Footer -->
+        <p class="text-sm text-gray-500 text-center mt-6">Already have an account?
+            <a href="login.php" class="text-indigo-500 hover:text-indigo-700 font-semibold">Login</a>
+        </p>
     </div>
 </body>
 
